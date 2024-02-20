@@ -15,7 +15,7 @@ import { UserRegisterModule } from 'src/app/components/user-register/user-regist
     FormsModule,
     IonicModule,
     ChatsPageRoutingModule,
-    UserRegisterModule
+    UserRegisterModule,
   ],
   declarations: [ChatsPage]
 })

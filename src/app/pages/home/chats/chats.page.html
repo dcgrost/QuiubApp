@@ -1,7 +1,11 @@
 <ion-content>
-  <ion-list lines="none"> <!--aqui se itera la lista y ya-->
-    <ion-item>
-      <app-user-register class="full-width-button"></app-user-register>
+  <ion-list lines="none">
+    <ion-item *ngFor="let user of users">
+      <app-user-register class="full-width-button"
+      [name]="user.userName"
+      [img]="user.image"
+      [date]="user.created"
+      ></app-user-register>
     </ion-item>
     
   </ion-list>

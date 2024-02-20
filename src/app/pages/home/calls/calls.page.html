@@ -25,8 +25,12 @@
     <ion-item class="list-item-info">Recent</ion-item>
   
     <ion-list lines="none" >
-      <ion-item>
-        <app-user-register class="full-width-button" [call]="true"></app-user-register>
+      <ion-item *ngFor="let user of users; let odd = odd">
+        <app-user-register class="full-width-button" [call]="true" [callIn]="odd"
+        [name]="user.userName"
+        [img]="user.image"
+        [date]="user.created"
+        ></app-user-register>
       </ion-item>
     </ion-list>
   </ion-list>

@@ -9,9 +9,12 @@ export class UserRegisterComponent  implements OnInit {
   @Input() public update: boolean = false;
   @Input() public mutedUpdate: boolean = false;
   @Input() public call: boolean = false;
-  public name: string = 'Alam';
-  public img: string = 'https://ionicframework.com/docs/img/demos/avatar.svg';
-  public callIn: boolean = false;
+  @Input() public callIn: boolean = false;
+
+  
+  @Input() public name: string = 'Alam';
+  @Input() public img: string = 'https://ionicframework.com/docs/img/demos/avatar.svg';
+  @Input() public date: string = '14:08'
 
   constructor() { }
 

@@ -8,6 +8,7 @@ import { CallsPageRoutingModule } from './calls-routing.module';
 
 import { CallsPage } from './calls.page';
 import { UserRegisterModule } from 'src/app/components/user-register/user-register.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { UserRegisterModule } from 'src/app/components/user-register/user-regist
     FormsModule,
     IonicModule,
     CallsPageRoutingModule,
-    UserRegisterModule
+    UserRegisterModule,
   ],
   declarations: [CallsPage]
 })

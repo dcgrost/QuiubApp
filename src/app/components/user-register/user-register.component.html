@@ -5,9 +5,9 @@
   <ion-list class="custom-list">
     <ion-item class="list-item-title">{{name}}</ion-item>
     <ion-item class="list-item-info">
-      <ion-icon name="trending-up" *ngIf="!callIn && call"></ion-icon>
-      <ion-icon name="trending-down" *ngIf="callIn && call"></ion-icon>
-      15:14
+      <ion-icon name="trending-up" *ngIf="!callIn && call" color="danger"></ion-icon>
+      <ion-icon name="trending-down" *ngIf="callIn && call" color="success"></ion-icon>
+      {{date}}
     </ion-item>
   </ion-list>
   <ion-icon name="volume-mute" slot="end" color="medium" *ngIf="mutedUpdate"></ion-icon>

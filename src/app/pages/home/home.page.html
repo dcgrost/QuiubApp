@@ -1,9 +1,9 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
+  <ion-toolbar *ngIf="!seaching">
     <ion-title>QuiubApp</ion-title>
 
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="toggleSearchBar()">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
 
@@ -28,6 +28,10 @@
         </ng-template>
       </ion-popover>
     </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="seaching">
+    <ion-searchbar show-cancel-button="always" (ionCancel)="toggleSearchBar()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 

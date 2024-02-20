@@ -12,9 +12,15 @@ export class HomePage implements OnInit {
   public updatesNotifications: number = 0;
   public callsNotifications: number = 0;
 
+  public seaching: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleSearchBar() {
+    this.seaching = !this.seaching;
   }
 
 }

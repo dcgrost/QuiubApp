@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user.model';
+import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
   selector: 'app-updates',
@@ -11,9 +13,16 @@ export class UpdatesPage implements OnInit {
   showViewed: boolean = false;
   showMuted: boolean = false;
 
-  constructor() {}
+  user: User = {userName: this.name, image: this.img, created: '15:08'};
+  news: User[] = [];
+  vieweds: User[] = [];
+  muteds: User[] = [];
 
-  ngOnInit() {}
+  constructor(private chatService: ChatService) {}
+
+  ngOnInit() {
+    this.fetchData();
+  }
 
   toggleViewedList() {
     this.showViewed = !this.showViewed;
@@ -21,5 +30,20 @@ export class UpdatesPage implements OnInit {
 
   toggleMutedList() {
     this.showMuted = !this.showMuted;
+  }
+
+  fetchData() {
+    this.chatService.getNewUpdates().subscribe((data) => {
+      this.news = data;
+    });
+    this.chatService.getViewedUpdates().subscribe((data) => {
+      this.vieweds = data;
+    });
+    this.chatService.getMutedUpdates().subscribe((data) => {
+      this.muteds = data;
+    });
+    this.chatService.getUser().subscribe((data) => {
+      this.user = data;
+    })
   }
 }

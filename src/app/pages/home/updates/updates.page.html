@@ -7,19 +7,23 @@
     <ion-item>
       <ion-button fill="clear" class="full-width-button">
         <ion-avatar slot="start" class="profile-img">
-          <img src="{{img}}" />
+          <img src="{{user.image}}" />
         </ion-avatar>
         <ion-list class="custom-list">
           <ion-item class="list-item-title">My status</ion-item>
-          <ion-item class="list-item-info">Tap to add status update</ion-item>
+          <ion-item class="list-item-info">{{user.created}}</ion-item>
         </ion-list>
       </ion-button>
     </ion-item>
 
     <ion-item></ion-item>
 
-    <ion-item>
-      <app-user-register [update]="true"></app-user-register>
+    <ion-item *ngFor="let new of news">
+      <app-user-register [update]="true"  class="full-width-button"
+      [name]="new.userName"
+      [img]="new.image"
+      [date]="new.created"
+      ></app-user-register>
     </ion-item>
 
     <ion-item>
@@ -36,8 +40,12 @@
     </ion-item>
     <ion-item *ngIf="showViewed">
       <ion-list>
-        <ion-item>
-          <app-user-register class="full-width-button" [update]="true"></app-user-register>
+        <ion-item *ngFor="let viewed of vieweds">
+          <app-user-register class="full-width-button" [update]="true"
+          [name]="viewed.userName"
+          [img]="viewed.image"
+          [date]="viewed.created">
+        </app-user-register>
         </ion-item>
       </ion-list>
     </ion-item>
@@ -56,8 +64,12 @@
     </ion-item>
     <ion-item *ngIf="showMuted">
       <ion-list class="custom-list">
-        <ion-item>
-          <app-user-register class="full-width-button" [update]="true" [mutedUpdate]="true"></app-user-register>
+        <ion-item *ngFor="let muted of muteds">
+          <app-user-register class="full-width-button" [update]="true" [mutedUpdate]="true"
+          [name]="muted.userName"
+          [img]="muted.image"
+          [date]="muted.created"
+          ></app-user-register>
         </ion-item>
       </ion-list>
     </ion-item>
