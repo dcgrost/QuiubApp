@@ -1,0 +1,63 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>QuiubApp</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+
+      <ion-button id="click-trigger">
+        <ion-icon
+          slot="icon-only"
+          ios="ellipsis-horizontal"
+          md="ellipsis-vertical"
+        ></ion-icon>
+      </ion-button>
+      <ion-popover trigger="click-trigger" triggerAction="click">
+        <ng-template>
+          <ion-content>
+            <ion-list>
+              <ion-item>
+                <ion-button class="full-width-button" color="clear"
+                  >Settings</ion-button
+                >
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="community">
+        <ion-icon name="people"></ion-icon>
+        <ion-badge *ngIf="communityNotifications > 0"
+          >{{communityNotifications}}</ion-badge
+        >
+      </ion-tab-button>
+      <ion-tab-button tab="chats">
+        <ion-label>Chats</ion-label>
+        <ion-badge *ngIf="chatsNotifications > 0"
+          >{{chatsNotifications}}</ion-badge
+        >
+      </ion-tab-button>
+      <ion-tab-button tab="updates">
+        <ion-label>Updates</ion-label>
+        <ion-badge *ngIf="updatesNotifications > 0"
+          >{{updatesNotifications}}</ion-badge
+        >
+      </ion-tab-button>
+      <ion-tab-button tab="calls">
+        <ion-label>Calls</ion-label>
+        <ion-badge *ngIf="callsNotifications > 0"
+          >{{callsNotifications}}</ion-badge
+        ></ion-tab-button
+      >
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

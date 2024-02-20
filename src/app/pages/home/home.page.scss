@@ -1,0 +1,22 @@
+ion-tab-button {
+    position: relative;
+  
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background-color: transparent;
+      transition: width 0.3s ease; /* Agregado: transición para suavizar el cambio de tamaño */
+    }
+  
+    &.tab-selected::before {
+      width: 100%;
+      background-color: var(--ion-color-primary);
+    }
+  }
+  

@@ -1,0 +1,78 @@
+<ion-content>
+  <ion-list lines="none">
+    <ion-item>
+      <h1>Status</h1>
+    </ion-item>
+
+    <ion-item>
+      <ion-button fill="clear" class="full-width-button">
+        <ion-avatar slot="start" class="profile-img">
+          <img src="{{img}}" />
+        </ion-avatar>
+        <ion-list class="custom-list">
+          <ion-item class="list-item-title">My status</ion-item>
+          <ion-item class="list-item-info">Tap to add status update</ion-item>
+        </ion-list>
+      </ion-button>
+    </ion-item>
+
+    <ion-item></ion-item>
+
+    <ion-item>
+      <ion-button
+        (click)="toggleViewedList()"
+        color="medium"
+        fill="clear"
+        class="full-width-button"
+      >
+        <ion-label>Viewed updates</ion-label>
+        <ion-icon name="arrow-up" slot="end" *ngIf="showViewed"></ion-icon>
+        <ion-icon name="arrow-down" slot="end" *ngIf="!showViewed"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item *ngIf="showViewed">
+      <ion-list>
+        <ion-item>
+          <ion-button fill="clear" class="full-width-button">
+            <ion-avatar slot="start" class="profile-img">
+              <img src="{{img}}" />
+            </ion-avatar>
+            <ion-list class="custom-list">
+              <ion-item class="list-item-title">{{name}}</ion-item>
+              <ion-item class="list-item-info">19:21</ion-item>
+            </ion-list>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+
+    <ion-item>
+      <ion-button
+        (click)="toggleMutedList()"
+        color="medium"
+        fill="clear"
+        class="full-width-button"
+      >
+        <ion-label>Muted updates</ion-label>
+        <ion-icon name="arrow-up" slot="end" *ngIf="showMuted"></ion-icon>
+        <ion-icon name="arrow-down" slot="end" *ngIf="!showMuted"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item *ngIf="showMuted">
+      <ion-list>
+        <ion-item>
+          <ion-button fill="clear" class="full-width-button">
+            <ion-avatar slot="start" class="profile-img">
+              <img src="{{img}}" />
+            </ion-avatar>
+            <ion-list class="custom-list">
+              <ion-item class="list-item-title">{{name}}</ion-item>
+              <ion-item class="list-item-info">19:21</ion-item>
+            </ion-list>
+            <ion-icon name="volume-mute" slot="end" color="medium"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+  </ion-list>
+</ion-content>

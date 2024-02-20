@@ -1,0 +1,48 @@
+<ion-content>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-button fill="clear" class="full-width-button">
+        <ion-icon
+          name="link"
+          slot="start"
+          style="
+            background-color: var(--ion-color-primary);
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 25px;
+          "
+          color="light"
+        ></ion-icon>
+        <ion-list class="custom-list">
+          <ion-item class="list-item-title">Create call link</ion-item>
+          <ion-item class="list-item-info"
+            >Share a link for your QuiubApp call</ion-item
+          >
+        </ion-list>
+      </ion-button>
+    </ion-item>
+  
+    <ion-item class="list-item-info">Recent</ion-item>
+  
+    <ion-list>
+      <ion-item>
+        <ion-button fill="clear" class="full-width-button">
+          <ion-avatar slot="start" class="profile-img">
+            <img src="{{img}}" />
+          </ion-avatar>
+          <ion-list class="custom-list">
+            <ion-item class="list-item-title">{{name}}</ion-item>
+            <ion-item class="list-item-info">
+              <ion-icon name="trending-up" *ngIf="!callIn"></ion-icon>
+              <ion-icon name="trending-down" *ngIf="callIn"></ion-icon>
+              15:14
+            </ion-item>
+          </ion-list>
+          <ion-button slot="end">
+            <ion-icon name="call"></ion-icon>
+          </ion-button>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>

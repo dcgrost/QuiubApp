@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-list lines="none"> <!--aqui se itera la lista y ya-->
+    <ion-item>      
+      <ion-button fill="clear" class="full-width-button">
+        <ion-avatar slot="start" class="profile-img">
+          <img src="{{img}}" />
+        </ion-avatar>
+        <ion-list class="custom-list">
+          <ion-item class="list-item-title">{{name}}</ion-item>
+          <ion-item class="list-item-info">19:21</ion-item>
+        </ion-list>
+        
+        <ion-badge *ngIf="messageNotifications > 0"
+          >{{messageNotifications}}</ion-badge
+        >
+      </ion-button>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>
