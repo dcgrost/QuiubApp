@@ -24,24 +24,9 @@
   
     <ion-item class="list-item-info">Recent</ion-item>
   
-    <ion-list>
+    <ion-list lines="none" >
       <ion-item>
-        <ion-button fill="clear" class="full-width-button">
-          <ion-avatar slot="start" class="profile-img">
-            <img src="{{img}}" />
-          </ion-avatar>
-          <ion-list class="custom-list">
-            <ion-item class="list-item-title">{{name}}</ion-item>
-            <ion-item class="list-item-info">
-              <ion-icon name="trending-up" *ngIf="!callIn"></ion-icon>
-              <ion-icon name="trending-down" *ngIf="callIn"></ion-icon>
-              15:14
-            </ion-item>
-          </ion-list>
-          <ion-button slot="end">
-            <ion-icon name="call"></ion-icon>
-          </ion-button>
-        </ion-button>
+        <app-user-register class="full-width-button" [call]="true"></app-user-register>
       </ion-item>
     </ion-list>
   </ion-list>

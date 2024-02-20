@@ -19,6 +19,10 @@
     <ion-item></ion-item>
 
     <ion-item>
+      <app-user-register [update]="true"></app-user-register>
+    </ion-item>
+
+    <ion-item>
       <ion-button
         (click)="toggleViewedList()"
         color="medium"
@@ -33,15 +37,7 @@
     <ion-item *ngIf="showViewed">
       <ion-list>
         <ion-item>
-          <ion-button fill="clear" class="full-width-button">
-            <ion-avatar slot="start" class="profile-img">
-              <img src="{{img}}" />
-            </ion-avatar>
-            <ion-list class="custom-list">
-              <ion-item class="list-item-title">{{name}}</ion-item>
-              <ion-item class="list-item-info">19:21</ion-item>
-            </ion-list>
-          </ion-button>
+          <app-user-register class="full-width-button" [update]="true"></app-user-register>
         </ion-item>
       </ion-list>
     </ion-item>
@@ -59,18 +55,9 @@
       </ion-button>
     </ion-item>
     <ion-item *ngIf="showMuted">
-      <ion-list>
+      <ion-list class="custom-list">
         <ion-item>
-          <ion-button fill="clear" class="full-width-button">
-            <ion-avatar slot="start" class="profile-img">
-              <img src="{{img}}" />
-            </ion-avatar>
-            <ion-list class="custom-list">
-              <ion-item class="list-item-title">{{name}}</ion-item>
-              <ion-item class="list-item-info">19:21</ion-item>
-            </ion-list>
-            <ion-icon name="volume-mute" slot="end" color="medium"></ion-icon>
-          </ion-button>
+          <app-user-register class="full-width-button" [update]="true" [mutedUpdate]="true"></app-user-register>
         </ion-item>
       </ion-list>
     </ion-item>

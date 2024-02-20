@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { UpdatesPageRoutingModule } from './updates-routing.module';
 
 import { UpdatesPage } from './updates.page';
+import { UserRegisterModule } from 'src/app/components/user-register/user-register.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UpdatesPageRoutingModule
+    UpdatesPageRoutingModule,
+    UserRegisterModule
   ],
   declarations: [UpdatesPage]
 })

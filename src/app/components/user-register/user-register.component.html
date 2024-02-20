@@ -1,0 +1,17 @@
+<ion-button fill="clear" class="full-width-button">
+  <ion-avatar slot="start" class="profile-img">
+    <img src="{{img}}" />
+  </ion-avatar>
+  <ion-list class="custom-list">
+    <ion-item class="list-item-title">{{name}}</ion-item>
+    <ion-item class="list-item-info">
+      <ion-icon name="trending-up" *ngIf="!callIn && call"></ion-icon>
+      <ion-icon name="trending-down" *ngIf="callIn && call"></ion-icon>
+      15:14
+    </ion-item>
+  </ion-list>
+  <ion-icon name="volume-mute" slot="end" color="medium" *ngIf="mutedUpdate"></ion-icon>
+  <ion-button slot="end" *ngIf="call">
+    <ion-icon name="call"></ion-icon>
+  </ion-button>
+</ion-button>

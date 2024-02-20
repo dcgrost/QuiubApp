@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CallsPageRoutingModule } from './calls-routing.module';
 
 import { CallsPage } from './calls.page';
+import { UserRegisterModule } from 'src/app/components/user-register/user-register.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CallsPageRoutingModule
+    CallsPageRoutingModule,
+    UserRegisterModule
   ],
   declarations: [CallsPage]
 })
